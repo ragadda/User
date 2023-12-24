@@ -13,17 +13,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepositoryImpl userRepository;
 
-
-    // @Override
-    // public Integer createUser(User user) {
-    //  if(user.getFirstName() != null && user.getLastName() != null){
-    //      System.out.println("create user" );
-    //return userRepository.createUser(user);
-    //}else{
-    //  System.out.println("can't create user without name and lastname");
-    //   return -1;
-    //   }
-    //}
+     @Override
+     public Integer createUser(User user) {
+      if(user.getFirstName() != null && user.getLastName() != null){
+          System.out.println("create user" );
+           return userRepository.createUser(user);
+      }else{
+          System.out.println("can't create user without name and lastname");
+          return -1;
+      }
+     }
 
     @Override
     public void deleteUserById(Integer userId) {
@@ -53,12 +52,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserAge(Integer id, Integer age) {
-
+         userRepository.updateUserAge(id,age);
     }
 
     @Override
     public void updateUserAddress(Integer id, String address) {
-
+         userRepository.updateUserAddress(id,address);
     }
 
 

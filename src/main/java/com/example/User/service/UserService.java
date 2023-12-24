@@ -7,6 +7,7 @@ import java.util.List;
 
 @Service
 public interface UserService {
+    Integer createUser(User user);
     void deleteUserById(Integer id);
     void updateUser(User user);
     void updateUserFirstName(Integer id, String firstName);
