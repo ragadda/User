@@ -8,7 +8,6 @@ CREATE TABLE userr(
     age int NOT NULL DEFAULT 0,
     address VARCHAR(255) NOT NULL DEFAULT '',
     joining_date DATE NOT NULL DEFAULT now() ,
-    isRegistered BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY(id)
 );
 

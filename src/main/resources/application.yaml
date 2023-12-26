@@ -13,3 +13,5 @@ spring:
     console:
       enabled: true
 
+answer:
+  url: http://localhost:8081

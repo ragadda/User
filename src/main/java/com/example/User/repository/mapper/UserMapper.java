@@ -18,7 +18,7 @@ public class UserMapper implements RowMapper<User> {
                 rs.getString("email"),
                 rs.getInt("age"),
                 rs.getString("address"),
-                rs.getDate("joining_date").toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+                rs.getDate("joining_date").toLocalDate()
         );
     }
 }

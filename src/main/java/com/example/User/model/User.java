@@ -14,7 +14,6 @@ public class User {
     private int age;
     private String address;
     private LocalDate joiningDate;
-    private Boolean isRegistered;
 
     public User(Integer id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate) {
         this.id = id;
@@ -24,14 +23,6 @@ public class User {
         this.age = age;
         this.address = address;
         this.joiningDate = joiningDate;
-    }
-
-    public Boolean getRegistered() {
-        return isRegistered;
-    }
-
-    public void setRegistered(Boolean registered) {
-        isRegistered = registered;
     }
 
     public String getAddress() {

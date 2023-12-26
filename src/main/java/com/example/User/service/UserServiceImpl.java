@@ -1,6 +1,7 @@
 package com.example.User.service;
 
 import com.example.User.model.User;
+import com.example.User.poll.AnswerService;
 import com.example.User.repository.UserRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepositoryImpl userRepository;
+    @Autowired
+    private AnswerService answerService;
 
      @Override
      public Integer createUser(User user) {
@@ -27,7 +30,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserById(Integer userId) {
         userRepository.deleteUserById(userId);
-        // pollService.deletePoll(userId);
+        answerService.deleteAllUserAnswers(userId);
     }
 
     @Override
@@ -63,7 +66,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Integer id) {
-        return userRepository.getUserById(id);
+         return userRepository.getUserById(id);
     }
 
     @Override

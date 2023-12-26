@@ -21,30 +21,30 @@ public class UserController {
     }
 
     @PutMapping(value = "/update_first_name")
-    public void updateUserFirstName(@RequestParam Integer id, @RequestParam(value = "first_name") String firstName){
+    public void updateUserFirstName(@RequestParam(value = "user_id") Integer id, @RequestParam(value = "first_name") String firstName){
         userService.updateUserFirstName(id,firstName);
     }
     @PutMapping(value = "/update_last_name")
-    public void updateUserLastName(@RequestParam Integer id,@RequestParam(value = "last_name") String lastName){
+    public void updateUserLastName(@RequestParam(value = "user_id") Integer id,@RequestParam(value = "last_name") String lastName){
         userService.updateUserLastName(id,lastName);
     }
 
     @PutMapping(value = "/update_age")
-    public void updateUserEmail(@RequestParam Integer id,@RequestParam Integer age){
+    public void updateUserEmail(@RequestParam(value = "user_id") Integer id,@RequestParam Integer age){
         userService.updateUserAge(id,age);
     }
 
     @PutMapping(value = "/update_address")
-    public void updateUserEmail(@RequestParam Integer id,@RequestParam String address){
+    public void updateUserEmail(@RequestParam(value = "user_id") Integer id,@RequestParam String address){
        userService.updateUserAddress(id,address);
     }
     @DeleteMapping(value = "/delete")
-    public void deleteUserById(@RequestParam Integer id){
+    public void deleteUserById(@RequestParam(value = "user_id") Integer id){
        userService.deleteUserById(id);
     }
 
-    @GetMapping(value = "/by_id")
-    public User getUserById(@RequestParam Integer id){
+    @GetMapping(value="/by_id")
+    public User getUserById(@RequestParam(value = "user_id") Integer id){
         return userService.getUserById(id);
     }
 

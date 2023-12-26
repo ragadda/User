@@ -16,15 +16,13 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Integer createUser(User user) {
-        String sql = "INSERT INTO " + Constant.USER_TABLE_NAME + " (first_name,last_name,email,age,address,isRegistered) VALUES ( ?,?,?,?,?,?)";
+        String sql = "INSERT INTO " + Constant.USER_TABLE_NAME + " (first_name,last_name,email,age,address) VALUES ( ?,?,?,?,?)";
         return jdbcTemplate.update(sql,
                 user.getFirstName(),
                 user.getLastName(),
                 user.getEmail(),
                 user.getAge(),
-                user.getAddress(),
-                true);
-
+                user.getAddress());
     }
 
     @Override
