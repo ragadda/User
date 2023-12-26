@@ -4,6 +4,7 @@ import com.example.User.model.User;
 import com.example.User.repository.mapper.UserMapper;
 import com.example.User.ulits.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -70,8 +71,12 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUserById(Integer id) {
-        String sql = "SELECT * FROM "+ Constant.USER_TABLE_NAME +" WHERE id = ?";
-        return jdbcTemplate.queryForObject(sql,new UserMapper(),id);
+        try {
+            String sql = "SELECT * FROM " + Constant.USER_TABLE_NAME + " WHERE id = ?";
+            return jdbcTemplate.queryForObject(sql, new UserMapper(), id);
+        }catch (EmptyResultDataAccessException e){
+            return null;
+        }
     }
 
     @Override
