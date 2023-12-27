@@ -28,7 +28,6 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void deleteUserById(Integer id) {
-        System.out.println("Customer with id = " + id + " was deleted");
         String sql = "DELETE FROM "+ Constant.USER_TABLE_NAME+" WHERE id = ?";
         jdbcTemplate.update(sql,id);
     }

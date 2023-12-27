@@ -13,5 +13,5 @@ spring:
     console:
       enabled: true
 
-answer:
+poll:
   url: http://localhost:8081
