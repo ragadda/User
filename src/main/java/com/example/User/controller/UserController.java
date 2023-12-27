@@ -15,10 +15,6 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-    @PutMapping(value = "/update")
-    public void updateUser(@RequestBody User user){
-        userService.updateUser(user);
-    }
 
     @PutMapping(value = "/update_first_name")
     public void updateUserFirstName(@RequestParam(value = "user_id") Integer id, @RequestParam(value = "first_name") String firstName){

@@ -10,7 +10,6 @@ public interface UserRepository {
 
     Integer createUser(User user);
     void deleteUserById(Integer id);
-    void updateUser(User user);
     void updateUserFirstName(Integer id, String firstName);
     void updateUserLastName(Integer id, String lastName);
     void updateUserEmail(Integer id, String email);

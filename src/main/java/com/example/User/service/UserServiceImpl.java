@@ -38,10 +38,6 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Override
-    public void updateUser(User user) {
-        userRepository.updateUser(user);
-    }
 
     @Override
     public void updateUserFirstName(Integer id, String firstName) {

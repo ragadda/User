@@ -32,10 +32,7 @@ public class UserRepositoryImpl implements UserRepository {
         jdbcTemplate.update(sql,id);
     }
 
-    @Override
-    public void updateUser(User user) {
 
-    }
 
     @Override
     public void updateUserFirstName(Integer id, String firstName) {
